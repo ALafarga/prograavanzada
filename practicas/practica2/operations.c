@@ -9,8 +9,16 @@ int add(int a, int b){
     assert(c < MAX_INT && c > -MAX_INT);
     //if(c < 22147483647 || c > -22147483647)
     //{
-        return (int) c;
+    return (int) c;
     //}
 
     //return a + b;
+}
+
+int substraction(int a, int b){
+    long c = (long) a - b;//c checa los tipos y el ponemos
+    assert(c < MAX_INT && c > -MAX_INT);
+        
+    return (int) c;
+
 }
