@@ -68,3 +68,5 @@ TODO:
 -desarrollar quick sort
 -revisar si necesito completar todos los cuadrados
 -calcular la distancia en los 9 casos
+
+Falle a la hora de usar el metodo de programacion TDD donde se hacen testeos, debo revisar el c.scaffold
