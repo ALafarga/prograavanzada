@@ -1,0 +1,51 @@
+make
+# practica6
+
+# How to compile
+make run
+
+# How to run test
+make test
+
+# How to debug the program
+gcc -g name_of_file.c -o name_of_file
+gdb name_of_file
+
+## How to start the Program
+break main
+run # Execute the program
+next # Next Line
+print &i # Print the address of the variable
+print sizeof(int) # Print sizeof the int type
+x/4xb &i # Get the raw bytes of i. I want to examinate 4 values formatted as hex numerals. byte by byte
+ptype i # Tell me the type of c expression
+x/12xb &a # a is an array
+
+# Linking stuff and generating the program
+
+If you have modules you have to compile one by one
+gcc -c module1.c # This command generates module1.o
+gcc -c program-that-depends-of-module1.c
+gcc -o program.out module1.o program-that-depends-of-module1.o
+./program.out
+
+
+
+The hash table will have an array of elements which will be compose of: 
+    A string that will store the value of the key
+    A general address to the data to be store
+
+In every element that is not empty, an array will be storing all the values from the elements that have collide with this key
+This array will be dinamic, so every time the arrray gets full it will duplicate itself into another array with the double of its size
+
+To insert an element to the Hash Table it will check if the element is already part of the table, if this, it will not be inserted, otherwise it will be.
+
+The Hash Table will only store the addresses to the key and value
+The Key and Value will be store in RAM memory using the strdump for the key (we know is a string) and memcpy for the value (it could be anything).
+
+
+
+So if you look for an element on the Hash Table, it will return null if the element does not exist and the vallue y the key exists.
+
+The images in the folder are the picturing explination of what has been explained above.
+
