@@ -60,7 +60,7 @@ static char * testHashUpsert() {
 	hashInsert(&hash,"cuarenta",40);
 	hashInsert(&hash,"cuarenta",80);
 	muAssert("error, first key cuarenta", strcmp(hash.data[0].elements[0].key,"cuarenta") == 0);
-	muAssert("error, first value 80", hash.data[0].elements[1].value == 80);
+	muAssert("error, first value 80", hash.data[0].elements[0].value == 80);
 	return 0;
 }
 

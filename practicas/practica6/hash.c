@@ -6,7 +6,7 @@
 
 void printDebug(char *msg){
     //n cuando no, y cuando si
-    char hashDebug = getenv(HASH_DEBUG);
+    char *hashDebug = getenv(HASH_DEBUG);//regresa una cadena
     if(hashDebug != NULL && strcmp(hashDebug,"y") == 0){
         printf("%s\n", msg);
     }
@@ -46,7 +46,7 @@ static hashDoInsert(HashInt *hash, char *key, int value)
     //index %d, index
     sprintf(errorMessage, "index %d", index);
     printDebug(errorMessage);
-    if (currentHashElement -> elements == NULL)
+    if (currentHashElement->elements == NULL)
     {
         printDebug("CHECKING DATA");
         //checking data\n
@@ -72,9 +72,9 @@ static hashDoInsert(HashInt *hash, char *key, int value)
 }
 
 static void hashDoUpdate(HashInt *hash, char *key, int value){
-    int pos = doHash(key, hash -> size);
+    int pos = doHash(key, hash->size);
     int i;
-    Element * currentElements = hash -> data[pos].elements;
+    Element * currentElements = hash->data[pos].elements;
     int currentElementsLength = hash->data[pos].count;
 
     for(i = 0; i < currentElementsLength; i++)
@@ -101,9 +101,9 @@ void hashInsert(HashInt *hash, char *key, int value)
 
 int * hashGet(HashInt *hash, char *key)
 {
-    int pos = doHash(key, hash -> size);
+    int pos = doHash(key, hash->size);
     int i;
-    Element * currentElements = hash -> data[pos].elements;
+    Element * currentElements = hash->data[pos].elements;
     int currentElementsLength = hash->data[pos].count;
     int *value = NULL;
 
