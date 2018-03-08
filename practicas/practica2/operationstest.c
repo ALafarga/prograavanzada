@@ -27,7 +27,7 @@ int main() {
     "Adition test passed", 
     "Addition test failed");
 
-//Test Substaction
+//Test Substraction
     int d = 2147483644;
     int f = 2;
 
