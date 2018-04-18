@@ -1,4 +1,6 @@
 *.exe
 .DS_Store
 tools
-
+.vs
+examenes\2p\Examen2p\Examen2p\.vs
+/.vs

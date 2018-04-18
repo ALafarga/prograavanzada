@@ -46,3 +46,5 @@ La funcion que usaremos para indicar cual sera la entrada y la salida sera:
 
 Cuando hablamos de salidas y entradas estandar nos referimos a la generalidad de los procesos donde todo proceso tiene una entrada estandar indicada con un 0 que por lo general es el teclado, una salida estandar indicada con un 1 que es el monitor y una salida estandar de error que por lo general es tambien el monitor. 
 Esta es la teoria a la que se refieren los numeros 1 y 2 que utilizamos para indicar la salida del executable que lee lo que sea que entra y lo escribe.
+
+La diferencia entre stream y files es que en files debemos abrir y cerrar entonces se usa fopen
