@@ -14,7 +14,7 @@ typedef struct s {
 
 int main() {
 	char *fileName = "studentDb.data";
-	int fd = open(filename, O_RDWR);
+	int fd = open(fileName, O_RDWR);
 		//busca donde corre el programa
 	Student *pAvanzada = (Student *) mmap( //limitante de mmap es que le tienes que decir cuantos
 		//bytes quieres de ese bloque de memoria.

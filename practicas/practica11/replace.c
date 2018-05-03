@@ -1,22 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(int argc, char **argv)
+int main()
 {
     char *fileName = "myfile.txt"; //si no le paso nada de path lo busca en el folder actual
-    //argv[0] es el nombre de mi programa
-	char *search = argv[1];
-    char *replace = argv[2];
+    char *search = "open";
+    char *replace = "abierto";
     int character;
-	int firstCharacter;
-	char isReplaced = 0;
     long streamPos = 0;
     int i = 0;
     FILE *myFile = fopen(fileName, "r");
     while (1)
     {
         character = fgetc(myFile);
-		firstCharacter = character;
         streamPos = ftell(myFile);
         if (feof(myFile))
         {
@@ -33,21 +29,13 @@ int main(int argc, char **argv)
             }
             if( i == strlen(search)){
                 printf("MATCH \n");
-				fputs (replace, stdout);
-				isReplaced = 1;
-				fseek(myFile, -1, SEEK_CUR);
             } else {
                 //rewind
-				character = firstCharacter;
                 fseek(myFile, streamPos, SEEK_SET);
-				//isReplaced = 1;
             }
         }
         // fputc(character, stdout);
-        if(!isReplaced){
-			fputc(character, stdout);
-		}
-		isReplaced = 0;
+        fputc(character, stdout);
         // fprintf(stderr, "character = %c\n", character);
         // PRINTDEBUG("character = %c\n", character);
     }

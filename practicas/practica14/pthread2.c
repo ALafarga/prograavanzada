@@ -7,9 +7,12 @@
 void *helloWorld(void *p)
 {
     long id = (long)p;
+    //el stack es privado en cada hilo entonces nadie lo puede ver
+    //el heap es del proceso, los hilos no tienen heap
+    //y asi lo pueden ver todos
     char *msg = (char *)malloc(25 * sizeof(char));
 
-    sprintf(msg, "Hello World %ld\n", id);
+    sprintf(msg, "Hello World %ld\n", id);//ld es un long
     
     return (void *)msg;
 }
@@ -35,7 +38,7 @@ int main()
             threads[i],
             (void *)&msgResult);
         printf("%s", msgResult);
-        free(msgResult);
+        free(msgResult);        
     }
     return 0;
 }

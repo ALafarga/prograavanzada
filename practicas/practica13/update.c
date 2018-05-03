@@ -14,7 +14,7 @@ typedef struct s {
 
 int main() {
 	char *fileName = "studentDb.data";
-	int fd = open(filename, O_RDWR);
+	int fd = open(fileName, O_RDWR);
 	int id;
 	char name[20];
 
